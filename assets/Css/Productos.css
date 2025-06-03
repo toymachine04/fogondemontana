@@ -1,0 +1,268 @@
+.product-item {
+  animation: slideLeft 0.8s ease both;
+}
+
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+main {
+  background-color: #e0c48e;
+  padding: 2rem 0;
+}
+
+h1 {
+  font-size: 3rem; /* Tamaño más grande y escalable */
+  text-align: center;
+  font-family: 'Courier New', monospace;
+  color: #d1573e;
+  text-transform: uppercase; /* para un estilo más fuerte */
+  letter-spacing: 3px; /* un poco de espacio entre letras */
+  margin-bottom: 20px; /* separación con el párrafo */
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2); /* sombra sutil para dar profundidad */
+
+}
+
+.deliciosos {
+  font-size: 1.25rem; /* tamaño cómodo para lectura */
+  text-align: center;
+  margin: 0 50px 60px 50px; /* solo margen horizontal y abajo para separar */
+  font-family: 'Courier New', monospace;
+  color: #5a3d2b; /* un marrón oscuro para contraste suave */
+  line-height: 1.6; /* mejora la legibilidad */
+  max-width: 700px; /* limita ancho para que no sea muy ancho y mejor lectura */
+  margin-left: auto;
+  margin-right: auto; /* para centrar el texto con margen automático */
+  gap: 40px;
+}
+
+
+/* Estilo general del header */
+
+/* --- HEADER --- */
+header {
+  background-color: #d1573e;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+}
+
+header img {
+  max-width: 100px;
+  height: auto;
+}
+
+/* NAV */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 60px;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+  font-size: 15px;
+}
+
+nav a {
+  display: inline-block;
+  padding: 10px 25px;
+  color: #e0c48e;
+  font-weight: 900;
+  text-decoration: none;
+  background-color: #d1573e;
+  border: 3px solid #e0c48e;
+  border-radius: 12px;
+  box-shadow: 4px 4px 0 #333;
+  transition: all 0.2s ease;
+  font-family: 'Courier New', monospace;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+nav a:hover {
+  background-color: #e0c48e;
+  color: #fff;
+  box-shadow: none;
+  transform: translate(2px, 2px);
+}
+
+/* Contenedor general de productos */
+.product-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 800px; /* Limita ancho para que no se extienda mucho */
+  margin: 0 auto; /* Centra la lista en la página */
+  padding: 20px;
+}
+
+/* Cada producto */
+.product-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f5f5f5;
+  border-radius: 12px;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+  padding: 20px;
+}
+
+/* Contenedor de imagen para controlar tamaño y que sea responsivo */
+.product-image-container {
+  width: 100%;
+  max-width: 600px; /* Limita ancho máximo */
+  margin-bottom: 20px;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* Imagen que ocupe todo el contenedor y mantenga proporción */
+.product-image-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* Contenido debajo de la imagen */
+.product-content {
+  text-align: center;
+}
+
+.product-content h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #d1573e; /* Color cálido */
+  font-family: 'Courier New', monospace;
+}
+
+.product-content p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #555;
+  max-width: 600px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+}
+
+footer {
+  background-color: #d1573e;
+  padding: 30px;
+  color: #fff;
+  font-family: 'Courier New', monospace;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer-logo img {
+  max-width: 100px;
+  height: auto;
+}
+
+.footer-redes {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.btn-red {
+  text-decoration: none;
+  color: #d1573e;
+  background-color: #e0c48e;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+  box-shadow: 3px 3px 0 #333;
+}
+
+.btn-red:hover {
+  background-color: #fff;
+  color: #d1573e;
+  box-shadow: none;
+  transform: translate(2px, 2px);
+}
+
+.footer-copy {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #fddfb2;
+}
+
+@media (max-width: 600px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px; /* separa logo y botones */
+  }
+
+  .footer-logo {
+    order: 0; /* asegura que esté primero */
+  }
+
+  .footer-redes {
+    order: 1; /* redes después del logo */
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+  }
+
+  .footer-redes .btn-red {
+    flex: none; /* para que no crezcan */
+  }
+}
+
+
+/* Móviles */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px; /* espacio entre logo y nav */
+  }
+
+  header img {
+    max-width: 120px; /* un poco más grande si quieres */
+    margin-bottom: 10px; /* separación del menú */
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; /* reduce un poco el gap para que no quede tan separado */
+    width: 100%; /* que ocupe todo el ancho disponible */
+    padding: 0;
+    margin: 0;
+  }
+
+  nav a {
+    width: auto; /* evita que los botones llenen todo el ancho */
+    min-width: 150px; /* para que tengan un tamaño cómodo */
+    padding: 10px 20px;
+  }
+}

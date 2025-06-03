@@ -1,0 +1,281 @@
+html, body {
+  overflow-x: hidden;
+} 
+main {
+  background-color: #e0c48e;
+  padding: 2rem 0;
+}
+
+h1 {
+  font-size: 7.5rem; /* Tamaño más grande y escalable */
+  text-align: center;
+  font-family: 'Courier New', monospace;
+  color: #d1573e;
+  text-transform: uppercase; /* para un estilo más fuerte */
+  letter-spacing: 5px; /* un poco de espacio entre letras */
+  margin-bottom: 5px; /* separación con el párrafo */
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2); /* sombra sutil para dar profundidad */
+
+}
+@media (max-width: 600px) {
+  h1 {
+    font-size: 3rem; /* Tamaño más adecuado para móvil */
+    letter-spacing: 2px; /* Espaciado más reducido */
+    padding: 0 20px; /* Espaciado lateral si hace falta */
+  }
+}
+
+
+p {
+  font-size: 1.25rem; /* tamaño cómodo para lectura */
+  text-align: center;
+  margin: 0 50px 60px 50px; /* solo margen horizontal y abajo para separar */
+  font-family: 'Courier New', monospace;
+  color: #5a3d2b; /* un marrón oscuro para contraste suave */
+  line-height: 1.6; /* mejora la legibilidad */
+  max-width: 700px; /* limita ancho para que no sea muy ancho y mejor lectura */
+  margin-left: auto;
+  margin-right: auto; /* para centrar el texto con margen automático */
+  gap: 40px;
+}
+
+
+.galeria {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap; /* Esto asegura que si no caben, pasen a la siguiente línea */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.galeria img {
+  width: 100%;
+  max-width: 500px; /* Aumenta este valor si quieres imágenes más grandes */
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+
+.carousel-wrapper {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel-track {
+  display: flex;
+  width: calc(100vw * 3);
+  height: 100vh;
+  animation: scroll 24s linear infinite alternate;
+}
+
+.carousel-slide {
+  width: 100vw;
+  height: 100vh;
+  flex-shrink: 0;
+}
+
+.carousel-slide img {
+  width: 105%;
+  height: 105%;
+  object-fit: cover;
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-200vw); } /* Mostrar hasta la imagen 3 */
+}
+
+
+
+/* --- HEADER --- */
+header {
+  background-color: #d1573e;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+}
+
+header img {
+  max-width: 100px;
+  height: auto;
+}
+
+/* NAV */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 60px;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+  font-size: 15px;
+}
+
+nav a {
+  display: inline-block;
+  padding: 10px 25px;
+  color: #e0c48e;
+  font-weight: 900;
+  text-decoration: none;
+  background-color: #d1573e;
+  border: 3px solid #e0c48e;
+  border-radius: 12px;
+  box-shadow: 4px 4px 0 #333;
+  transition: all 0.2s ease;
+  font-family: 'Courier New', monospace;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+nav a:hover {
+  background-color: #e0c48e;
+  color: #fff;
+  box-shadow: none;
+  transform: translate(2px, 2px);
+}
+
+
+/* --- FOOTER --- */
+footer {
+  background-color: #d1573e;
+  padding: 30px;
+  color: #fff;
+  font-family: 'Courier New', monospace;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer-logo img {
+  max-width: 100px;
+  height: auto;
+}
+
+.footer-redes {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.btn-red {
+  text-decoration: none;
+  color: #d1573e;
+  background-color: #e0c48e;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+  box-shadow: 3px 3px 0 #333;
+}
+
+.btn-red:hover {
+  background-color: #fff;
+  color: #d1573e;
+  box-shadow: none;
+  transform: translate(2px, 2px);
+}
+
+.footer-copy {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #fddfb2;
+}
+@media (max-width: 600px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px; /* separa logo y botones */
+  }
+
+  .footer-logo {
+    order: 0; /* asegura que esté primero */
+  }
+
+  .footer-redes {
+    order: 1; /* redes después del logo */
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+  }
+
+  .footer-redes .btn-red {
+    flex: none; /* para que no crezcan */
+  }
+}
+
+
+@media (max-width: 991px) {
+  nav ul {
+    gap: 30px;
+    font-size: 16px;
+    justify-content: center;
+  }
+
+  .contenido-encima h2,
+  .contenido-encima h3 {
+    font-size: 2.2rem;
+  }
+
+  .imagencortada {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .fondo2,
+  .texto-fondo {
+    width: 100%;
+  }
+}
+
+/* Móviles */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px; /* espacio entre logo y nav */
+  }
+
+  header img {
+    max-width: 120px; /* un poco más grande si quieres */
+    margin-bottom: 10px; /* separación del menú */
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; /* reduce un poco el gap para que no quede tan separado */
+    width: 100%; /* que ocupe todo el ancho disponible */
+    padding: 0;
+    margin: 0;
+  }
+
+  nav a {
+    width: auto; /* evita que los botones llenen todo el ancho */
+    min-width: 150px; /* para que tengan un tamaño cómodo */
+    padding: 10px 20px;
+  }
+}
+
